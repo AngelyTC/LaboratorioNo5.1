@@ -9,8 +9,7 @@ namespace LaboratorioNo5
     class Saldo
     {
         public string NoEmpleado2 { get; set; }
-        public string horasDelMes { get; set; }
+        public int horasDelMes { get; set; }
         public string Mes { get; set; }
-        public string sueldoMensual { get; set; }
     }
 }

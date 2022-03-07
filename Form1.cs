@@ -15,6 +15,7 @@ namespace LaboratorioNo5
     {
         List<Empleado> personas = new List<Empleado>();
         List<Saldo> datos2 = new List<Saldo>();
+        List<sueldo> sueldos = new List<sueldo>();
         int horas;
         int dinero;
         int SueldoMes;
@@ -33,14 +34,14 @@ namespace LaboratorioNo5
             persona.NoEmpleado = txtNoEmpleado.Text;
             persona.Nombre = txtNombre.Text;
             persona.Apellido = txtApellido.Text;
-            persona.SueldoPorHora = txtSueldoHora.Text;
+            persona.SueldoPorHora = Convert.ToInt16(txtSueldoHora.Text);
 
             Saldo datos1 = new Saldo();
             datos1.NoEmpleado2 = txtNoEmpleado.Text;
-            datos1.horasDelMes = txtHoraMes.Text;
+           datos1.horasDelMes = Convert.ToInt16(txtHoraMes.Text);
             datos1.Mes = txtMes.Text;
-            datos1.sueldoMensual = SueldoMes.ToString();
-           
+
+
             //agregar a lista
             personas.Add(persona);
             datos2.Add(datos1);
@@ -63,7 +64,7 @@ namespace LaboratorioNo5
                 persona.NoEmpleado = reader.ReadLine();
                 persona.Nombre = reader.ReadLine();
                 persona.Apellido = reader.ReadLine();
-                persona.SueldoPorHora = reader.ReadLine();
+                persona.SueldoPorHora = Convert.ToInt32(reader.ReadLine());
 
                 //agregar a lista
                 personas.Add(persona);
@@ -82,7 +83,7 @@ namespace LaboratorioNo5
 
                 Saldo datos1 = new Saldo();
                 datos1.NoEmpleado2 = reader.ReadLine();
-                datos1.horasDelMes = reader.ReadLine();
+                datos1.horasDelMes = Convert.ToInt16(reader.ReadLine());
                 datos1.Mes = reader.ReadLine();
 
                 //agregar a lista
@@ -107,9 +108,9 @@ namespace LaboratorioNo5
             dataGridView2.DataSource = datos2;
             dataGridView2.Refresh();
 
-         
+
             cmbEmpleados.Items.Add(txtNombre.Text);
-                   
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -159,28 +160,78 @@ namespace LaboratorioNo5
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-               txtNoEmpleado.Clear();
-               txtNombre.Clear();
-               txtApellido.Clear();
-               txtSueldoHora.Clear();
+            txtNoEmpleado.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtSueldoHora.Clear();
 
-               txtNoEmpleado.Clear();
-               txtHoraMes.Clear();
-               txtMes.Clear();
+            txtNoEmpleado.Clear();
+            txtHoraMes.Clear();
+            txtMes.Clear();
         }
 
         private void btnVerCombo_Click(object sender, EventArgs e)
         {
-            Empleado persona = new Empleado();
-            if (cmbEmpleados.Text == persona.Nombre)
-            {
-                foreach (var dato in persona.Nombre)
-                {             
-                    dataGridView3.DataSource = persona.Nombre;
-                    dataGridView3.Refresh();
+         
+            
+                for (int i = 0; i < personas.Count; i++)
+                {
+
+                    for (int j = 0; j < datos2.Count; j++)
+                    {
+                    if (cmbEmpleados.Text == personas[i].NoEmpleado)
+                    {
+                        if (personas[i].NoEmpleado == datos2[j].NoEmpleado2)
+                        {
+
+                            sueldo sueldos1 = new sueldo();
+
+                            sueldos1.NoEmpleado = personas[i].NoEmpleado;
+
+                            sueldos1.Nombre = personas[i].Nombre;
+
+                            sueldos1.Sueldo = personas[i].SueldoPorHora * datos2[j].horasDelMes;
+                            sueldos1.Mes = datos2[j].Mes;
+
+                            sueldos.Add(sueldos1);
+                        }
+
+                    }
+
                 }
-             
+                dataGridView3.DataSource = sueldos;
+                dataGridView3.Refresh();
+
             }
+        }
+
+        private void btncalcular_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < personas.Count; i++)
+            {
+
+                for (int j = 0; j < datos2.Count; j++)
+                {
+
+                    if (personas[i].NoEmpleado == datos2[j].NoEmpleado2)
+                    {
+
+                        sueldo sueldos1 = new sueldo();
+
+                        sueldos1.NoEmpleado = personas[i].NoEmpleado;
+
+                        sueldos1.Nombre = personas[i].Nombre;
+
+                        sueldos1.Sueldo = personas[i].SueldoPorHora * datos2[j].horasDelMes;
+                        sueldos1.Mes = datos2[j].Mes;
+
+                        sueldos.Add(sueldos1);
+                    }
+                }
+            }
+            dataGridView4.DataSource = sueldos;
+            dataGridView4.Refresh();
         }
     }
 }
+

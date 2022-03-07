@@ -52,11 +52,14 @@ namespace LaboratorioNo5
             this.label8 = new System.Windows.Forms.Label();
             this.cmbEmpleados = new System.Windows.Forms.ComboBox();
             this.btnVerCombo = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btncalcular = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -187,7 +190,7 @@ namespace LaboratorioNo5
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(890, 705);
+            this.btnMostrar.Location = new System.Drawing.Point(885, 707);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(136, 46);
             this.btnMostrar.TabIndex = 15;
@@ -261,15 +264,6 @@ namespace LaboratorioNo5
             this.btnVerCombo.UseVisualStyleBackColor = true;
             this.btnVerCombo.Click += new System.EventHandler(this.btnVerCombo_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(356, 583);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 20);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "---------->";
-            // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -280,14 +274,45 @@ namespace LaboratorioNo5
             this.dataGridView3.Size = new System.Drawing.Size(318, 115);
             this.dataGridView3.TabIndex = 24;
             // 
+            // btncalcular
+            // 
+            this.btncalcular.Location = new System.Drawing.Point(769, 758);
+            this.btncalcular.Name = "btncalcular";
+            this.btncalcular.Size = new System.Drawing.Size(158, 54);
+            this.btncalcular.TabIndex = 25;
+            this.btncalcular.Text = "calcular";
+            this.btncalcular.UseVisualStyleBackColor = true;
+            this.btncalcular.Click += new System.EventHandler(this.btncalcular_Click);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(1291, 161);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 62;
+            this.dataGridView4.RowTemplate.Height = 28;
+            this.dataGridView4.Size = new System.Drawing.Size(513, 280);
+            this.dataGridView4.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1436, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 20);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Sueldos";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1293, 823);
+            this.ClientSize = new System.Drawing.Size(1859, 823);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.btncalcular);
             this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnVerCombo);
             this.Controls.Add(this.cmbEmpleados);
             this.Controls.Add(this.label8);
@@ -316,6 +341,7 @@ namespace LaboratorioNo5
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,8 +372,10 @@ namespace LaboratorioNo5
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbEmpleados;
         private System.Windows.Forms.Button btnVerCombo;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button btncalcular;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Label label10;
     }
 }
 

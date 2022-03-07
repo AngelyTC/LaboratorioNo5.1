@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LaboratorioNo5
 {
-    class Empleado
+    class sueldo
     {
-        public string NoEmpleado { get; set; }
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public int SueldoPorHora { get; set; }
+        public string NoEmpleado { get; set; }
+        public decimal Sueldo { get; set; }
 
+        public string Mes { get; set; }
     }
 }
