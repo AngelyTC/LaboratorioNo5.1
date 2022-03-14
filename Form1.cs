@@ -49,8 +49,8 @@ namespace LaboratorioNo5
 
         private void btnLeer_Click(object sender, EventArgs e)
         {
-            Leer1(@"C:\Arch1.txt");
-            Leer2(@"C:\Enero.txt");
+            Leer1("Arch1.txt");
+            Leer2("Enero.txt");
         }
 
         private void Leer1(string fileName)
@@ -115,8 +115,8 @@ namespace LaboratorioNo5
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Guardar(@"C:\Arch1.txt");
-            Guardar2(@"C:\Enero.txt");
+            Guardar("Arch1.txt");
+            Guardar2("Enero.txt");
         }
 
         private void Guardar(string fileName)
